@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Compliance Audits - eWaste Tracker</title>
+    <link rel="stylesheet" href="css/admin-dashboard.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body>
+
+    <!-- Load Sidebar -->
+    <div id="sidebar-container"></div>
+
+    <!-- Main Content -->
+    <div class="dash-body">
+        <div class="header">
+            <h1>Compliance Audits</h1>
+        </div>
+
+        <!-- Audit Summary Cards -->
+        <div class="dashboard-info">
+            <div class="dashboard-card total-audits">
+                <h3>Total Audits</h3>
+                <p id="totalAudits">Loading...</p>
+            </div>
+            <div class="dashboard-card passed-audits">
+                <h3>Passed</h3>
+                <p id="passedCount">Loading...</p>
+            </div>
+            <div class="dashboard-card failed-audits">
+                <h3>Failed</h3>
+                <p id="failedCount">Loading...</p>
+            </div>
+            <div class="dashboard-card pending-audits">
+                <h3>Pending</h3>
+                <p id="pendingCount">Loading...</p>
+            </div>
+        </div>
+
+        <!-- Search and Filter -->
+        <div class="filter-container">
+            <input type="text" id="searchAudit" placeholder="Search by Waste ID..." class="search-bar">
+            <select id="filterAuditStatus" class="filter-dropdown">
+                <option value="all">All Status</option>
+                <option value="Passed">Passed</option>
+                <option value="Failed">Failed</option>
+                <option value="Pending">Pending</option>
+            </select>
+        </div>
+
+        <!-- Audit Table -->
+        <div class="user-management">
+            <h2>Audit Records</h2>
+            <table id="auditTable">
+                <thead>
+                    <tr>
+                        <th>Waste ID</th>
+                        <th>Status</th>
+                        <th>Audited By</th>
+                        <th>Audited At</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Data will be injected dynamically -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Log Audit Section (For Regulators) -->
+        <div class="user-management">
+            <h2>Log New Audit</h2>
+            <form id="logAuditForm">
+                <input type="text" id="auditWasteId" placeholder="Waste ID">
+                <select id="auditStatus">
+                    <option value="Passed">Passed</option>
+                    <option value="Failed">Failed</option>
+                    <option value="Pending">Pending</option>
+                </select>
+                <button type="submit">Log Audit</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Load Sidebar Script -->
+    <script>
+        fetch("sidebar.html")
+            .then(response => response.text())
+            .then(data => document.getElementById("sidebar-container").innerHTML = data);
+    </script>
+
+    <script src="js/audits.js"></script>
+
+</body>
+</html>

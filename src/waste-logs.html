@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Waste Logs - eWaste Tracker</title>
+    <link rel="stylesheet" href="css/admin-dashboard.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body>
+
+    <!-- Load Sidebar -->
+    <div id="sidebar-container"></div>
+
+    <!-- Main Content -->
+    <div class="dash-body">
+        <div class="header">
+            <h1>Waste Logs</h1>
+        </div>
+
+        <!-- Waste Summary Cards -->
+        <div class="dashboard-info">
+            <div class="dashboard-card waste-total">
+                <h3>Total Waste Logged</h3>
+                <p id="totalWaste">Loading...</p>
+            </div>
+            <div class="dashboard-card e-waste">
+                <h3>E-Waste Logged</h3>
+                <p id="eWasteCount">Loading...</p>
+            </div>
+            <div class="dashboard-card plastic-waste">
+                <h3>Plastic Waste Logged</h3>
+                <p id="plasticWasteCount">Loading...</p>
+            </div>
+            <div class="dashboard-card other-waste">
+                <h3>Other Waste Logged</h3>
+                <p id="otherWasteCount">Loading...</p>
+            </div>
+        </div>
+
+        <!-- Search and Filter -->
+        <div class="filter-container">
+            <input type="text" id="searchWaste" placeholder="Search by Waste Type..." class="search-bar">
+            <select id="filterType" class="filter-dropdown">
+                <option value="all">All Waste Types</option>
+                <option value="e-waste">E-Waste</option>
+                <option value="plastic">Plastic</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+
+        <!-- Waste Logs Table -->
+        <div class="waste-logs">
+            <h2>Logged Waste</h2>
+            <table id="wasteLogsTable">
+                <thead>
+                    <tr>
+                        <th>Waste ID</th>
+                        <th>Type</th>
+                        <th>Origin</th>
+                        <th>Quantity</th>
+                        <th>Logged At</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Data will be dynamically inserted here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Load Sidebar Script -->
+    <script>
+        fetch("sidebar.html")
+            .then(response => response.text())
+            .then(data => document.getElementById("sidebar-container").innerHTML = data);
+    </script>
+
+    <script src="js/waste-logs.js"></script>
+
+</body>
+</html>

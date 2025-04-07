@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Manage Users - eWaste Tracker</title>
+    <link rel="stylesheet" href="css/admin-dashboard.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body>
+
+    <!-- Load Sidebar -->
+    <div id="sidebar-container"></div>
+
+    <!-- Main Content -->
+    <div class="dash-body">
+        <div class="header">
+            <h1>Manage Users</h1>
+        </div>
+
+        <!-- User Summary Cards -->
+        <div class="dashboard-info">
+            <div class="dashboard-card total-users">
+                <h3>Total Users</h3>
+                <p id="totalUsers">Loading...</p>
+            </div>
+            <div class="dashboard-card producers">
+                <h3>Producers</h3>
+                <p id="producerCount">Loading...</p>
+            </div>
+            <div class="dashboard-card recyclers">
+                <h3>Recyclers</h3>
+                <p id="recyclerCount">Loading...</p>
+            </div>
+            <div class="dashboard-card logistics">
+                <h3>Logistics</h3>
+                <p id="logisticsCount">Loading...</p>
+            </div>
+        </div>
+
+        <!-- Search and Filter -->
+        <div class="filter-container">
+            <input type="text" id="searchUser" placeholder="Search by Ethereum Address..." class="search-bar">
+            <select id="filterRole" class="filter-dropdown">
+                <option value="all">All Roles</option>
+                <option value="Producer">Producer</option>
+                <option value="Recycler">Recycler</option>
+                <option value="Logistics">Logistics</option>
+                <option value="Regulator">Regulator</option>
+            </select>
+        </div>
+
+        <!-- Users Table -->
+        <div class="user-management">
+            <h2>Registered Users</h2>
+            <table id="usersTable">
+                <thead>
+                    <tr>
+                        <th>Ethereum Address</th>
+                        <th>Role</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Data will be injected dynamically -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Load Sidebar Script -->
+    <script>
+        fetch("sidebar.html")
+            .then(response => response.text())
+            .then(data => document.getElementById("sidebar-container").innerHTML = data);
+    </script>
+
+    <script src="js/manage-users.js"></script>
+
+</body>
+</html>

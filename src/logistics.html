@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eWaste Tracker - Logistics Provider</title>
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/logistics-provider.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>eWaste Tracker</h2>
+        <ul>
+            <li><a href="logistics.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+            <li><a href="update-transport-status.html"><i class="fas fa-truck"></i> Update Status</a></li>
+            <li><a href="shipment-history.html"><i class="fas fa-history"></i> Shipment History</a></li>
+        </ul>
+        <!-- Logout Button -->
+        <button class="logout-btn" onclick="window.location.href='index.html'">
+            <i class="fas fa-sign-out-alt"></i> Logout
+        </button>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+        <!-- Welcome Banner -->
+        <div class="welcome-banner">
+            <h1>Welcome, Logistics Provider</h1>
+            <p>Track and update eWaste shipments efficiently.</p>
+        </div>
+
+        <!-- Dashboard Metrics -->
+        <div class="dashboard-metrics">
+            <div class="metric-card">
+                <i class="fas fa-box-open"></i>
+                <h3>Total Shipments</h3>
+                <p id="totalShipments">0</p>
+            </div>
+            <div class="metric-card">
+                <i class="fas fa-truck-moving"></i>
+                <h3>In Transit</h3>
+                <p id="inTransit">0</p>
+            </div>
+            <div class="metric-card">
+                <i class="fas fa-check-circle"></i>
+                <h3>Delivered</h3>
+                <p id="delivered">0</p>
+            </div>
+        </div>
+
+        <!-- Shipments Timeline -->
+        <div class="shipments-timeline">
+            <h2>Recent Shipment Updates</h2>
+            <div class="timeline" id="timeline">
+                <!-- Timeline items will be populated dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/logistics-provider.js"></script>
+</body>
+</html>

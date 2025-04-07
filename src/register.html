@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User Registration - eWaste Tracker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" 
+      content="default-src 'self' data:;
+              script-src 'self' 'unsafe-eval' https://cdn.jsdelivr.net https://code.jquery.com https://stackpath.bootstrapcdn.com;
+              style-src 'self' 'unsafe-inline' https://stackpath.bootstrapcdn.com https://cdnjs.cloudflare.com;
+              connect-src 'self' http://localhost:8545;
+              img-src 'self' data:;
+              font-src 'self' https://cdnjs.cloudflare.com;">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/web3/dist/web3.min.js"></script>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <i class="fas fa-recycle brand-icon"></i> 
+        <span class="brand-text">eWaste <span class="highlight">Tracker</span></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+        <li class="active"><a href="register.html"><i class="fas fa-user-plus"></i> Register</a></li>
+        <li><a href="login.html"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+        <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Registration Section -->
+  <div class="register-container">
+    <div class="register-card">
+      <div class="card-header">
+        <h3><i class="fas fa-user-plus"></i> User Registration</h3>
+      </div>
+      <div class="card-body">
+        <form id="registerForm" class="needs-validation" novalidate>
+          <div class="form-group">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" class="form-control" placeholder="Enter your name" required>
+            <div class="invalid-feedback">Please enter your name</div>
+          </div>
+          <div class="form-group">
+            <label for="role">Select Role:</label>
+            <select id="role" class="form-control" required>
+              <option value="">-- Choose Role --</option>
+              <option value="Producer">Producer</option>
+              <option value="Recycler">Recycler</option>
+              <option value="Logistics">Logistics</option>
+              <option value="Regulator">Regulator</option>
+            </select>
+            <div class="invalid-feedback">Please select a role</div>
+          </div>
+          <button type="submit" id="registerBtn" class="btn-primary" disabled>
+            <i class="fas fa-user-check"></i> Complete Registration
+          </button>
+        </form>
+        <div id="registerMessage" class="mt-3"></div>
+      </div>
+      <div class="card-footer">
+        Already registered? <a href="login.html">Login here</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <script src="js/register.js"></script>
+</body>
+</html>

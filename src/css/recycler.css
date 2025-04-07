@@ -1,0 +1,578 @@
+/* Root Variables */
+:root {
+    --sidebar-bg: #1e1e2f;
+    --sidebar-hover: #00ADB5;
+    --sidebar-accent: #0E76A8;
+    --text-color: #ffffff;
+    --border-radius: 10px;
+    --card-bg: #222831;
+    --card-shadow: rgba(0, 0, 0, 0.3);
+    --background-color: #f4f4f9;
+}
+
+/* Reset Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Full-screen Layout */
+html, body {
+    height: 100vh;
+    width: 100vw;
+    background: var(--background-color);
+    color: var(--text-color);
+    overflow-x: hidden;
+    display: flex;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background: var(--sidebar-bg);
+    color: white;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-top: 20px;
+    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.sidebar h2 {
+    text-align: center;
+    font-size: 22px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 15px;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    border-radius: var(--border-radius);
+    transition: all 0.3s ease-in-out;
+}
+
+.sidebar ul li a i {
+    font-size: 22px;
+    margin-right: 12px;
+}
+
+.sidebar ul li a:hover {
+    background: linear-gradient(to right, var(--sidebar-hover), var(--sidebar-accent));
+    transform: scale(1.05);
+}
+
+/* Main Content */
+.content {
+    margin-left: 260px;
+    padding: 40px;
+    width: calc(100% - 260px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Welcome Banner */
+.welcome-banner {
+    background: linear-gradient(135deg, #0E76A8, #00ADB5);
+    padding: 40px;
+    text-align: center;
+    border-radius: var(--border-radius);
+    box-shadow: 0 5px 15px var(--card-shadow);
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.welcome-banner h1 {
+    font-size: 36px;
+    color: white;
+}
+
+.welcome-banner p {
+    font-size: 18px;
+    opacity: 0.9;
+    color: white;
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: var(--text-color);
+    font-weight: bold;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border-radius: var(--border-radius);
+    border: 1px solid #444;
+    font-size: 16px;
+    background: #2d2d2d;
+    color: var(--text-color);
+    transition: all 0.3s ease-in-out;
+}
+
+.form-group input:focus {
+    border-color: var(--sidebar-hover);
+    outline: none;
+    box-shadow: 0 0 10px var(--sidebar-hover);
+}
+
+.submit-btn {
+    background: var(--sidebar-hover);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.submit-btn:hover {
+    background: var(--sidebar-accent);
+    transform: scale(1.02);
+}
+
+/* Dashboard Cards */
+.dashboard {
+    display: flex;
+    gap: 20px;
+    justify-content: space-evenly;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.dashboard-card {
+    background: var(--card-bg);
+    color: var(--text-color);
+    padding: 35px;
+    border-radius: var(--border-radius);
+    text-align: center;
+    box-shadow: 0 5px 15px var(--card-shadow);
+    width: 30%;
+    min-width: 250px;
+    transition: all 0.3s ease-in-out;
+    margin-bottom: 20px;
+}
+
+.dashboard-card i {
+    font-size: 50px;
+    margin-bottom: 10px;
+    color: var(--sidebar-hover);
+}
+
+.dashboard-card h3 {
+    margin-bottom: 5px;
+    font-size: 22px;
+}
+
+.dashboard-card p {
+    font-size: 24px;
+    font-weight: bold;
+    opacity: 0.9;
+}
+
+/* Details Container */
+.details-container {
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 5px 15px var(--card-shadow);
+    margin-top: 20px;
+    width: 100%;
+}
+
+.details-container p {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+/* Status Messages */
+#receiptStatus, #recyclingStatus {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#receiptStatus.success, #recyclingStatus.success {
+    color: #4caf50;
+}
+
+#receiptStatus.error, #recyclingStatus.error {
+    color: #f44336;
+}
+
+/* Logout Button */
+.logout-btn {
+    background: linear-gradient(135deg, #610f32, #8b1e4d);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 90%;
+    margin: 20px auto;
+    box-shadow: 0 5px 15px rgba(255, 77, 77, 0.3);
+}
+
+.logout-btn:hover {
+    background: linear-gradient(135deg, #bc1d62, #cd2e73);
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(255, 26, 26, 0.4);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 200px;
+    }
+
+    .content {
+        margin-left: 210px;
+        padding: 20px;
+    }
+
+    .dashboard-card {
+        width: 45%;
+    }
+}
+
+@media (max-width: 480px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .content {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .dashboard-card {
+        width: 100%;
+    }
+}
+
+/* Animated Header */
+.animated-header {
+    text-align: center;
+    margin-bottom: 40px;
+    animation: fadeInDown 1s ease-in-out;
+}
+
+.animated-header h2 {
+    font-size: 36px;
+    color: var(--sidebar-hover);
+    margin-bottom: 10px;
+}
+
+.animated-header p {
+    font-size: 18px;
+    color: #888;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Confirmation Card */
+.confirmation-card {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    max-width: 500px;
+    margin: 0 auto;
+    animation: slideInUp 1s ease-in-out;
+}
+
+.card-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.card-header i {
+    font-size: 60px;
+    color: var(--sidebar-hover);
+    margin-bottom: 10px;
+}
+
+.card-header h3 {
+    font-size: 24px;
+    color: var(--text-color);
+}
+
+.card-body {
+    margin-bottom: 20px;
+}
+
+.card-footer {
+    text-align: center;
+}
+
+.card-footer p {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.card-footer p.success {
+    color: #4caf50;
+}
+
+.card-footer p.error {
+    color: #f44336;
+}
+
+/* Submit Button Animation */
+.submit-btn {
+    background: var(--sidebar-hover);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.submit-btn:hover {
+    background: var(--sidebar-accent);
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.submit-btn i {
+    font-size: 20px;
+}
+
+/* Slide-in Animation */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Update Recycling Card */
+.update-recycling-card {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    max-width: 500px;
+    margin: 0 auto;
+    animation: slideInUp 1s ease-in-out;
+}
+
+.update-recycling-card .card-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.update-recycling-card .card-header i {
+    font-size: 60px;
+    color: var(--sidebar-hover);
+    margin-bottom: 10px;
+}
+
+.update-recycling-card .card-header h3 {
+    font-size: 24px;
+    color: var(--text-color);
+}
+
+.update-recycling-card .card-body {
+    margin-bottom: 20px;
+}
+
+.update-recycling-card .card-footer {
+    text-align: center;
+}
+
+.update-recycling-card .card-footer p {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.update-recycling-card .card-footer p.success {
+    color: #4caf50;
+}
+
+.update-recycling-card .card-footer p.error {
+    color: #f44336;
+}
+
+/* Submit Button Animation */
+.submit-btn {
+    background: var(--sidebar-hover);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.submit-btn:hover {
+    background: var(--sidebar-accent);
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.submit-btn i {
+    font-size: 20px;
+}
+
+/* Slide-in Animation */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* View eWaste Card */
+.view-ewaste-card {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    max-width: 500px;
+    margin: 0 auto;
+    animation: slideInUp 1s ease-in-out;
+}
+
+.view-ewaste-card .card-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.view-ewaste-card .card-header i {
+    font-size: 60px;
+    color: var(--sidebar-hover);
+    margin-bottom: 10px;
+}
+
+.view-ewaste-card .card-header h3 {
+    font-size: 24px;
+    color: var(--text-color);
+}
+
+.view-ewaste-card .card-body {
+    margin-bottom: 20px;
+}
+
+.view-ewaste-card .card-footer {
+    text-align: center;
+}
+
+.view-ewaste-card .card-footer .details-container {
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 5px 15px var(--card-shadow);
+    margin-top: 20px;
+    width: 100%;
+}
+
+.view-ewaste-card .card-footer .details-container p {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+/* Submit Button Animation */
+.submit-btn {
+    background: var(--sidebar-hover);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.submit-btn:hover {
+    background: var(--sidebar-accent);
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.submit-btn i {
+    font-size: 20px;
+}
+
+/* Slide-in Animation */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

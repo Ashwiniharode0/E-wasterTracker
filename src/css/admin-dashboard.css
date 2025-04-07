@@ -1,0 +1,462 @@
+/* Theme Colors */
+:root {
+    --primary-bg: #f3f6f9; /* Light gray for main page */
+    --secondary-bg: #ffffff; /* White for cards & forms */
+    --sidebar-bg: #1E1E2E; /* Dark sidebar */
+    --sidebar-accent: #0E76A8; /* Blue accent */
+    --sidebar-hover: #00ADB5; /* Teal hover */
+    --text-dark: #333;
+    --text-light: #f1f1f1;
+    --accent-color: #2ecc71;
+    --border-radius: 10px;
+    --dark-navy: #0b1a36; /* New Dark Navy Blue */
+  }
+  
+  /* Reset Styles */
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--primary-bg);
+    color: var(--text-dark);
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  /* Sidebar */
+  .menu {
+    width: 270px;
+    background: var(--sidebar-bg);
+    color: white;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.4);
+  }
+  
+  .menu-logo {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    padding: 20px;
+    text-transform: uppercase;
+  }
+  
+  .menu-item {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+    border-radius: var(--border-radius);
+    margin: 10px;
+    transition: 0.3s;
+  }
+  
+  .menu-item i {
+    font-size: 22px;
+    margin-right: 15px;
+  }
+  
+  .menu-item:hover {
+    background: var(--sidebar-hover);
+    transform: scale(1.05);
+  }
+  
+  .menu-item.active {
+    background: var(--sidebar-accent);
+    transform: scale(1.1);
+  }
+  
+  /* Logout Button */
+  .logout-btn {
+    background: #8b1e4d;
+    color: white;
+    padding: 12px;
+    margin: 20px;
+    border: none;
+    width: 90%;
+    border-radius: var(--border-radius);
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .logout-btn:hover {
+    background: #cd2e73;
+    transform: scale(1.05);
+  }
+  
+  /* Main Content */
+  .dash-body {
+    flex: 1;
+    padding: 20px;
+    background-color: var(--primary-bg);
+    margin-left: 270px;
+  }
+  
+  /* Header */
+  .header {
+    padding: 20px;
+    background: var(--sidebar-accent);
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: var(--border-radius);
+  }
+  
+  /* Dashboard Info */
+  .dashboard-info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    gap: 15px; /* Add space between cards */
+  }
+  
+  .dashboard-card {
+    background-color: var(--dark-navy);
+    color: white;
+    padding: 15px; /* Reduce padding */
+    border-radius: var(--border-radius);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    width: 20%; /* Reduce width so all fit in one row */
+    text-align: center;
+    transition: transform 0.3s ease;
+    margin: 5px; /* Add minimal spacing */
+  }
+  
+  
+  
+  .dashboard-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* User Management */
+  .user-management {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: var(--secondary-bg);
+    border-radius: var(--border-radius);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  #assignRoleForm input,
+  #assignRoleForm select,
+  #assignRoleForm button {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 12px;
+    font-size: 16px;
+    background-color: #eef2f5;
+    color: var(--text-dark);
+    border-radius: var(--border-radius);
+    border: none;
+    transition: 0.3s;
+  }
+  
+  #assignRoleForm button {
+    background-color: var(--accent-color);
+    color: white;
+    font-weight: bold;
+  }
+  
+  #assignRoleForm button:hover {
+    background-color: var(--sidebar-accent);
+  }
+  
+  
+  /* Waste Summary Cards */
+  .dashboard-card {
+    background-color: #162447;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    width: 22%;
+    margin: 10px;
+  }
+  
+  .dashboard-card:hover {
+    transform: translateY(-8px);
+  }
+  
+  /* Specific Colors for Waste Types */
+  .waste-total { background-color: #28073e; }
+  .e-waste { background-color: #28073e; }
+  .plastic-waste { background-color: #28073e; }
+  .other-waste { background-color: #28073e; }
+  
+  /* Search and Filter */
+  .filter-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+  }
+  
+  .search-bar, .filter-dropdown {
+    padding: 10px;
+    width: 48%;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+  }
+  
+  /* Table Styling */
+  .waste-logs table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .waste-logs th, .waste-logs td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .waste-logs th {
+    background-color: #1E1E2E;
+    color: white;
+  }
+  
+  .waste-logs tr:hover {
+    background-color: rgba(0, 122, 204, 0.2);
+    transition: 0.3s;
+  }
+  
+  
+  /* User Summary Cards */
+  .dashboard-card {
+    background-color: #162447;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    width: 22%;
+    margin: 10px;
+  }
+  
+  .dashboard-card:hover {
+    transform: translateY(-8px);
+  }
+  
+  /* Specific Colors for Roles */
+  .total-users { background-color: #28073e; }
+  .producers { background-color: #28073e; }
+  .recyclers { background-color: #28073e; }
+  .logistics { background-color: #28073e; }
+  
+  /* Search and Filter */
+  .filter-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+  }
+  
+  .search-bar, .filter-dropdown {
+    padding: 10px;
+    width: 48%;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+  }
+  
+  /* Table Styling */
+  .user-management table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .user-management th, .user-management td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .user-management th {
+    background-color: #1E1E2E;
+    color: white;
+  }
+  
+  .user-management tr:hover {
+    background-color: rgba(0, 122, 204, 0.2);
+    transition: 0.3s;
+  }
+  
+  
+  /* Recycling Status Cards */
+  .dashboard-card {
+    background-color: #162447;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    width: 30%;
+    margin: 10px;
+  }
+  
+  .dashboard-card:hover {
+    transform: translateY(-8px);
+  }
+  
+  /* Specific Colors for Status */
+  .total-processed { background-color: #28073e; }
+  .pending { background-color: #28073e; }
+  .delayed { background-color: #28073e; }
+  
+  /* Search and Filter */
+  .filter-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+  }
+  
+  .search-bar, .filter-dropdown {
+    padding: 10px;
+    width: 48%;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+  }
+  
+  /* Table Styling */
+  .user-management table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .user-management th, .user-management td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .user-management th {
+    background-color: #1E1E2E;
+    color: white;
+  }
+  
+  .user-management tr:hover {
+    background-color: rgba(0, 122, 204, 0.2);
+    transition: 0.3s;
+  }
+  
+  
+  /* Shipment Status Cards */
+  .dashboard-card {
+    background-color: #162447;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    width: 22%;
+    margin: 10px;
+  }
+  
+  .dashboard-card:hover {
+    transform: translateY(-8px);
+  }
+  
+  /* Specific Colors for Shipment Status */
+  .total-shipments { background-color: #6C5CE7; }
+  .in-transit { background-color: #FFA500; }
+  .delivered { background-color: #28A745; }
+  .delayed { background-color: #E74C3C; }
+  
+  /* Search and Filter */
+  .filter-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+  }
+  
+  .search-bar, .filter-dropdown {
+    padding: 10px;
+    width: 48%;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+  }
+  
+  /* Table Styling */
+  .user-management table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .user-management th, .user-management td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .user-management th {
+    background-color: #1E1E2E;
+    color: white;
+  }
+  
+  .user-management tr:hover {
+    background-color: rgba(0, 122, 204, 0.2);
+    transition: 0.3s;
+  }
+  
+  
+  /* Audit Status Cards */
+  .total-audits { background-color: #28073e; }
+  .passed-audits { background-color: #28073e; }
+  .failed-audits { background-color: #28073e; }
+  .pending-audits { background-color: #28073e; }
+  
+  /* Search and Filter */
+  .filter-container {
+      display: flex;
+      justify-content: space-between;
+      margin: 20px 0;
+  }
+  
+  .search-bar, .filter-dropdown {
+      padding: 10px;
+      width: 48%;
+      font-size: 16px;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+  }
+  
+  /* Table Styling */
+  .user-management table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+  }
+  
+  .user-management th, .user-management td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+  }
+  
+  .user-management th {
+      background-color: #1E1E2E;
+      color: white;
+  }
+  
+  .user-management tr:hover {
+      background-color: rgba(0, 122, 204, 0.2);
+      transition: 0.3s;
+  }
+  

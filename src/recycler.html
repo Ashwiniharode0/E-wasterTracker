@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eWaste Tracker - Recycler Dashboard</title>
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/recycler.css">
+    <script src="https://cdn.jsdelivr.net/npm/web3/dist/web3.min.js"></script>
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>eWaste Tracker</h2>
+        <ul>
+            <li><a href="recycler.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+            <li><a href="confirm-receipt.html"><i class="fas fa-check-circle"></i> Confirm Receipt</a></li>
+            <li><a href="update-recycling.html"><i class="fas fa-recycle"></i> Update Recycling</a></li>
+            <li><a href="view-ewaste.html"><i class="fas fa-eye"></i> View eWaste</a></li>
+        </ul>
+        <!-- Logout Button -->
+        <button class="logout-btn" onclick="window.location.href='index.html'">
+            <i class="fas fa-sign-out-alt"></i> Logout
+        </button>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+        <!-- Welcome Banner -->
+        <div class="welcome-banner">
+            <h1>Welcome, eWaste Recycler</h1>
+            <p>Manage and track eWaste recycling efficiently.</p>
+        </div>
+
+        <!-- Dashboard Cards -->
+        <div class="dashboard">
+            <div class="dashboard-card">
+                <i class="fas fa-trash-alt"></i>
+                <h3>Total Received</h3>
+                <p id="total-received">0</p>
+            </div>
+            <div class="dashboard-card">
+                <i class="fas fa-recycle"></i>
+                <h3>Recycled</h3>
+                <p id="total-recycled">0</p>
+            </div>
+            <div class="dashboard-card">
+                <i class="fas fa-hourglass-half"></i>
+                <h3>Pending</h3>
+                <p id="total-pending">0</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/recycler.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+</html>

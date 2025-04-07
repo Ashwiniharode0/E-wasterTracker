@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Recycling Progress - eWaste Tracker</title>
+    <link rel="stylesheet" href="css/admin-dashboard.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body>
+
+    <!-- Load Sidebar -->
+    <div id="sidebar-container"></div>
+
+    <!-- Main Content -->
+    <div class="dash-body">
+        <div class="header">
+            <h1>Recycling Progress</h1>
+        </div>
+
+        <!-- Status Summary Cards -->
+        <div class="dashboard-info">
+            <div class="dashboard-card total-processed">
+                <h3>Processed eWaste</h3>
+                <p id="processedCount">Loading...</p>
+            </div>
+            <div class="dashboard-card pending">
+                <h3>Pending Processing</h3>
+                <p id="pendingCount">Loading...</p>
+            </div>
+            <div class="dashboard-card delayed">
+                <h3>Delayed Processing</h3>
+                <p id="delayedCount">Loading...</p>
+            </div>
+        </div>
+
+        <!-- Search and Filter -->
+        <div class="filter-container">
+            <input type="text" id="searchRecycling" placeholder="Search by Waste ID..." class="search-bar">
+            <select id="filterStatus" class="filter-dropdown">
+                <option value="all">All Status</option>
+                <option value="Pending">Pending</option>
+                <option value="Completed">Completed</option>
+                <option value="Delayed">Delayed</option>
+            </select>
+        </div>
+
+        <!-- Recycling Table -->
+        <div class="user-management">
+            <h2>Recycling Records</h2>
+            <table id="recyclingTable">
+                <thead>
+                    <tr>
+                        <th>Waste ID</th>
+                        <th>Method</th>
+                        <th>Recycler</th>
+                        <th>Status</th>
+                        <th>Recycled At</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Data will be injected dynamically -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Load Sidebar Script -->
+    <script>
+        fetch("sidebar.html")
+            .then(response => response.text())
+            .then(data => document.getElementById("sidebar-container").innerHTML = data);
+    </script>
+
+    <script src="js/recycling-progress.js"></script>
+
+</body>
+</html>

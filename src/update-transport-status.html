@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eWaste Tracker - Update Transport Status</title>
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/logistics-provider.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>eWaste Tracker</h2>
+        <ul>
+            <li><a href="logistics.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+            <li><a href="update-transport-status.html"><i class="fas fa-truck"></i> Update Status</a></li>
+            <li><a href="shipment-history.html"><i class="fas fa-history"></i> Shipment History</a></li>
+        </ul>
+        <!-- Logout Button -->
+        <button class="logout-btn" onclick="window.location.href='index.html'">
+            <i class="fas fa-sign-out-alt"></i> Logout
+        </button>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+        <!-- Welcome Banner -->
+        <div class="welcome-banner">
+            <h1>Update Transport Status</h1>
+            <p>Update the status of eWaste shipments during transportation.</p>
+        </div>
+
+        <!-- Update Status Form -->
+        <div class="update-status-form">
+            <form id="updateStatusForm">
+                <div class="form-group">
+                    <label for="shipmentId">Shipment ID</label>
+                    <input type="text" id="shipmentId" placeholder="Enter Shipment ID" required>
+                </div>
+                <div class="form-group">
+                    <label for="status">Status</label>
+                    <select id="status" required>
+                        <option value="In Transit">In Transit</option>
+                        <option value="Delayed">Delayed</option>
+                        <option value="Delivered">Delivered</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="location">Current Location</label>
+                    <input type="text" id="location" placeholder="Enter Current Location" required>
+                </div>
+                <div class="form-group">
+                    <label for="notes">Notes</label>
+                    <textarea id="notes" placeholder="Enter any additional notes"></textarea>
+                </div>
+                <button type="submit" class="submit-btn">
+                    <i class="fas fa-sync-alt"></i> Update Status
+                </button>
+            </form>
+        </div>
+
+        <!-- Status Update Message -->
+        <div id="statusMessage" class="status-message"></div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/logistics-provider.js"></script>
+</body>
+</html>

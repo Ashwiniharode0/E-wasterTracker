@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shipments - eWaste Tracker</title>
+    <link rel="stylesheet" href="css/admin-dashboard.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body>
+
+    <!-- Load Sidebar -->
+    <div id="sidebar-container"></div>
+
+    <!-- Main Content -->
+    <div class="dash-body">
+        <div class="header">
+            <h1>Shipment Tracking</h1>
+        </div>
+
+        <!-- Shipment Summary Cards -->
+        <div class="dashboard-info">
+            <div class="dashboard-card total-shipments">
+                <h3>Total Shipments</h3>
+                <p id="totalShipments">Loading...</p>
+            </div>
+            <div class="dashboard-card in-transit">
+                <h3>In Transit</h3>
+                <p id="inTransitCount">Loading...</p>
+            </div>
+            <div class="dashboard-card delivered">
+                <h3>Delivered</h3>
+                <p id="deliveredCount">Loading...</p>
+            </div>
+            <div class="dashboard-card delayed">
+                <h3>Delayed</h3>
+                <p id="delayedCount">Loading...</p>
+            </div>
+        </div>
+
+        <!-- Search and Filter -->
+        <div class="filter-container">
+            <input type="text" id="searchShipment" placeholder="Search by Waste ID..." class="search-bar">
+            <select id="filterStatus" class="filter-dropdown">
+                <option value="all">All Status</option>
+                <option value="In Transit">In Transit</option>
+                <option value="Delivered">Delivered</option>
+                <option value="Delayed">Delayed</option>
+            </select>
+        </div>
+
+        <!-- Shipment Table -->
+        <div class="user-management">
+            <h2>Shipment Records</h2>
+            <table id="shipmentTable">
+                <thead>
+                    <tr>
+                        <th>Waste ID</th>
+                        <th>Status</th>
+                        <th>Transporter</th>
+                        <th>Updated At</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Data will be injected dynamically -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Load Sidebar Script -->
+    <script>
+        fetch("sidebar.html")
+            .then(response => response.text())
+            .then(data => document.getElementById("sidebar-container").innerHTML = data);
+    </script>
+
+    <script src="js/shipments.js"></script>
+
+</body>
+</html>

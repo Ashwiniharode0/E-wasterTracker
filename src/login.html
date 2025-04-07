@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User Login - eWaste Tracker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" 
+      content="default-src 'self' data:;
+              script-src 'self' 'unsafe-eval' https://cdn.jsdelivr.net https://code.jquery.com https://stackpath.bootstrapcdn.com;
+              style-src 'self' 'unsafe-inline' https://stackpath.bootstrapcdn.com https://cdnjs.cloudflare.com;
+              connect-src 'self' http://localhost:8545;
+              img-src 'self' data:;
+              font-src 'self' https://cdnjs.cloudflare.com;">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/web3/dist/web3.min.js"></script>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <i class="fas fa-recycle brand-icon"></i> 
+        <span class="brand-text">eWaste <span class="highlight">Tracker</span></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="register.html"><i class="fas fa-user-plus"></i> Register</a></li>
+        <li class="active"><a href="login.html"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+        <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Login Section -->
+  <div class="login-container">
+    <div class="login-card">
+      <div class="card-header">
+        <h3><i class="fas fa-sign-in-alt"></i> User Login</h3>
+      </div>
+      <div class="card-body">
+        <p>Connect your MetaMask wallet to login</p>
+        <button type="button" id="loginBtn" class="btn-primary">
+          <i class="fab fa-metamask"></i> Connect MetaMask
+        </button>
+        <div id="loginMessage" class="mt-3"></div>
+      </div>
+      <div class="card-footer">
+        Not registered yet? <a href="register.html">Register here</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <script src="js/login.js"></script>
+</body>
+</html>

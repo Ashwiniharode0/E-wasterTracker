@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - eWaste Tracker</title>
+    <link rel="stylesheet" href="css/admin-dashboard.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/web3/dist/web3.min.js"></script>
+</head>
+<body>
+
+    <!-- Load Sidebar -->
+    <div id="sidebar-container"></div>
+
+    <!-- Main Content -->
+    <div class="dash-body">
+        <div class="header">
+            <h1>Welcome, <span id="adminName">Admin</span></h1>
+        </div>
+
+        <div class="dashboard-info">
+            <div class="dashboard-card">
+                <h3>Users Registered</h3>
+                <p id="userCount">Loading...</p>
+            </div>
+            <div class="dashboard-card">
+                <h3>Waste Logs</h3>
+                <p id="wasteLogsCount">Loading...</p>
+            </div>
+            <div class="dashboard-card">
+                <h3>Recycling Progress</h3>
+                <p id="recyclingProgress">Loading...</p>
+            </div>
+            <div class="dashboard-card">
+                <h3>Shipments</h3>
+                <p id="shipmentsCount">Loading...</p>
+            </div>
+        </div>
+
+        <!-- User Role Management -->
+        <div class="user-management">
+            <h2>Assign Roles</h2>
+            <form id="assignRoleForm">
+                <input type="text" id="userAddress" placeholder="User Ethereum Address">
+                <select id="roleSelect">
+                    <option value="0">Producer</option>
+                    <option value="1">Recycler</option>
+                    <option value="2">Logistics</option>
+                    <option value="3">Regulator</option>
+                </select>
+                <button type="submit">Assign Role</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Load sidebar dynamically
+        fetch("sidebar.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("sidebar-container").innerHTML = data;
+            });
+    </script>
+
+    <script src="js/admin-dashboard.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track eWaste</title>
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/producers.css">
+    <script src="https://cdn.jsdelivr.net/npm/web3/dist/web3.min.js"></script>
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>eWaste Tracker</h2>
+        <ul>
+            <li><a href="producers.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+            <li><a href="log-ewaste.html"><i class="fas fa-plus-circle"></i> Log eWaste</a></li>
+            <li><a href="track-ewaste.html"><i class="fas fa-map-marked-alt"></i> Track eWaste</a></li>
+        </ul>
+        <button class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</button>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+        <div class="welcome-banner">
+            <h1>Track eWaste</h1>
+            <p>Monitor the status of your eWaste items.</p>
+        </div>
+
+        <!-- Filter Section -->
+        <div class="filter-section">
+            <label for="status-filter">Filter by Status:</label>
+            <select id="status-filter">
+                <option value="all">All</option>
+                <option value="pending">Pending</option>
+                <option value="in-transit">In Transit</option>
+                <option value="recycled">Recycled</option>
+            </select>
+        </div>
+
+        <!-- Track eWaste Table -->
+        <table id="track-ewaste-table">
+            <thead>
+                <tr>
+                    <th>Waste Type</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Dynamic content will be loaded here -->
+                <tr>
+                    <td colspan="3">No eWaste items tracked yet.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/track-ewaste.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+</html>
